@@ -5,9 +5,7 @@
 #include "assgnments.h"
 
 
-void binaryReadWrite() {
-
-   std::string fileName = "example_file.bin";
+void binaryReadWrite(std::string fileName) {
 
    std::uintmax_t fileSize=std::filesystem::file_size(fileName);
 
@@ -29,4 +27,27 @@ void binaryReadWrite() {
     outputFile.close();
 
     delete[] buffer;
+}
+
+int calculatePolishEntry(std::string input) {
+  const int stackMax = 100;
+  int stack[stackMax];
+  int top = -1;
+
+  for (int i = 0; i < input.length(); i++) {
+      if (std::isdigit(input[i])) {
+        stack[++top] = input[i] - '0';
+      }
+      else {
+        int a = stack[top--];
+        int b = stack[top--];
+         switch (input[i]) {
+           case '+' : stack[++top] = a + b; break;
+           case '-': stack[++top] = a - b; break;
+           case '*': stack[++top] = a * b; break;
+           case '/': stack[++top] = a / b; break;
+      }
+  }
+}
+return stack[top];
 }

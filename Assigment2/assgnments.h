@@ -3,7 +3,7 @@
 
 
 void binaryReadWrite();
-
+int calculatePolishEntry(std::string input);
 
 
 
