@@ -2,7 +2,7 @@
 #define ASSGNMENTS_H
 
 
-void binaryReadWrite();
+void binaryReadWrite(std::string fileName);
 int calculatePolishEntry(std::string input);
 
 
