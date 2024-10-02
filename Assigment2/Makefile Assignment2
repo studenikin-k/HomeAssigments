@@ -1,5 +1,0 @@
-all:main
-main.o: main.cpp assignments.h
-    g++ -c main.cpp
-assignments.o: assignments.cpp assignments.h
-    g++ -c assi

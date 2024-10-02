@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include <filesystem>
-#include "assgnments.h"
+#include "assignments.h"
 
 
 void binaryReadWrite(std::string fileName) {
@@ -42,7 +42,7 @@ int calculatePolishEntry(std::string input) {
         int a = stack[top--];
         int b = stack[top--];
          switch (input[i]) {
-           case '+' : stack[++top] = a + b; break;
+           case '+': stack[++top] = a + b; break;
            case '-': stack[++top] = a - b; break;
            case '*': stack[++top] = a * b; break;
            case '/': stack[++top] = a / b; break;
