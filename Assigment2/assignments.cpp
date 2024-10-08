@@ -9,9 +9,9 @@ void binaryReadWrite(std::string fileName) {
 
    std::uintmax_t fileSize=std::filesystem::file_size(fileName);
 
-   std::ifstream inputFile("example_file.bin", std::ios::binary);
+   std::ifstream inputFile(fileName, std::ios::binary);
 
-    inputFile.open("example_file.bin", std::ios::in | std::ios::binary);
+    inputFile.open(fileName, std::ios::in | std::ios::binary);
     if (!inputFile.is_open()) {
         std::cerr << "Error, file not openned" << std::endl;
         return;
@@ -30,23 +30,40 @@ void binaryReadWrite(std::string fileName) {
 }
 
 int calculatePolishEntry(std::string input) {
-  const int stackMax = 100;
-  int stack[stackMax];
-  int top = -1;
+	const int stackMax = 100;
+    int stack[stackMax];
+    int top = -1;
 
-  for (int i = 0; i < input.length(); i++) {
-      if (std::isdigit(input[i])) {
-        stack[++top] = input[i] - '0';
+    std::istringstream stream(input);
+    std::string token;
+
+  while (stream >> token) {
+      if (std::isdigit(token[0]) || (token.length() > 1 && token[0] == '-' && std::isdigit(token[1]))) {
+        stack[++top] = std::stoi(token.c_str());
       }
       else {
+         if (top < 1) {
+                std::cerr << "Not enough operands. Program stops.\n";
+                return -1;
+            }
         int a = stack[top--];
         int b = stack[top--];
-         switch (input[i]) {
-           case '+': stack[++top] = a + b; break;
-           case '-': stack[++top] = a - b; break;
-           case '*': stack[++top] = a * b; break;
-           case '/': stack[++top] = a / b; break;
+         switch (token[0]) {
+           case '+': stack[++top] = b + a; break;
+           case '-': stack[++top] = b - a; break;
+           case '*': stack[++top] = b * a; break;
+           case '/':
+             if (a == 0) {
+               std:: cerr << "Dividng by zero. Program stops\n";
+             	return -1;
+             }
+             stack[++top] = b / a; break;
       }
+/* In case of division or subtraction, I'll leave a hint: in the example "3 - 4"
+	I thought it would be more correct to pass the operands as "3 4 -"
+	Where the first will be the number from which they subtract, and the second as the subtrahend.
+	Because doing the opposite will be intuitively unclear
+*/
   }
 }
 return stack[top];
