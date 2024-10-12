@@ -1,5 +1,6 @@
 #include <iostream>
-#include "assignments.h"
+#include "assignment2a.h"
+#include "assignment2b.h"
 
 int main() {
    setlocale(LC_ALL, "russian");
