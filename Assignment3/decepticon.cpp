@@ -2,14 +2,14 @@
 #include <iostream>
 
 Decepticon::Decepticon() {
-    std::cout << "Decepticon создан.\n";
+    std::cout << "Decepticon created.\n";
 }
 
 Decepticon::~Decepticon() {
-    std::cout << "Decepticon уничтожен.\n";
+    std::cout << "Decepticon destroyed.\n";
 }
 
 bool Decepticon::sabotage() {
-    std::cout << "Decepticon проводит саботаж.\n";
+    std::cout << "Decepticon sabotage.\n";
     return true;
 }
