@@ -1,7 +1,7 @@
 TEST_TARGET = test_transformers
 
 CXX = g++
-CXXFLAGS = -Wall -std=c++11 -I/usr/include/gtest
+CXXFLAGS = -Wall -std=c++17 -I/usr/include/gtest
 
 LIBS = -lgtest -lgtest_main -pthread
 
