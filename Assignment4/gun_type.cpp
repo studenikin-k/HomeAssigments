@@ -3,10 +3,14 @@
 
 
 Gun_type::Gun_type(std::string gun_type)
-    : _auto_riffle_damage(35), _sniper_riffle_damage(70), _bazooka_damage(100), _arm_damage(50),
+    : _gun_type(gun_type), _auto_riffle_damage(35), _sniper_riffle_damage(70), _bazooka_damage(100), _arm_damage(50),
       _ammo_auto_riffle(90), _ammo_sniper_riffle(30), _ammo_bazooka(5), _ammo_arm(100)
 {
       std::cout << "Types of gun was created.\n";
+}
+
+std::string Gun_type::Get_gun_type(){
+  return _gun_type;
 }
 
 

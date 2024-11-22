@@ -5,14 +5,14 @@
 
 class Transformer {
     public:
-    Transformer(std::string gun_type,int damage);
+    Transformer(std::string gun_type, int damage, int ammo, std::string fraction);
     virtual ~Transformer();
     private:
       int _health;
       std::string _gun_type;
       unsigned int _damage;
       unsigned int _move_speed;
-      unsigned int _ammo
+      unsigned int _ammo;
       std::string  _fraction;
 };
 

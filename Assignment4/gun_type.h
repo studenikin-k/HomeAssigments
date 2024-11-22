@@ -9,10 +9,13 @@ class Gun_type
 	Gun_type::Gun_type(std::string);
     virtual ~Gun_type();
 
+    std::string Get_gun_type();
     int Get_damage_of_gun(std::string type_of_gun);
     int Get_ammo(std::string type_of_gun);
 
    protected:
+       std::string _gun_type;
+
        constexpr int _auto_riffle_damage;
        constexpr int _sniper_riffle_damage;
        constexpr int _bazooka_damage;
