@@ -3,8 +3,8 @@
 #include "gun_type.h"
 
 
-Transformer::Transformer(std::string gun_type, int damage ,int ammo , std::string fraction)
-    : _health(100),_gun_type(gun_type), _damage(damage),
+Transformer::Transformer(std::string name, std::string gun_type, int damage ,int ammo , std::string fraction)
+    : _name(name), _health(100),_gun_type(gun_type), _damage(damage),
       _move_speed(100), _ammo(ammo), _fraction(fraction)
       {
 
@@ -126,4 +126,10 @@ bool Transformer::operator>=(const Transformer& comparable) const{
       std::cout<<"Health matches"<<std::endl;
       return true;
 	}
+}
+
+std::ostream& operator<<(std::ostream& os, const Transformer& transformer){
+	os << "Fraction: " << transformer._fraction << "Name:" << transformer._name
+    << "Gun:"<< transformer._gun_type << "Health:"<< transformer._health << std::endl;
+    return os;
 }

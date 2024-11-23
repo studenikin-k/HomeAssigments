@@ -6,7 +6,7 @@
 class Transformer {
     public:
 
-    Transformer(std::string gun_type, int damage, int ammo, std::string fraction);
+    Transformer(std::string name,std::string gun_type, int damage, int ammo, std::string fraction);
     ~Transformer();
 
     bool transform();
@@ -29,9 +29,8 @@ class Transformer {
 
     friend std::ostream& operator<<(std::ostream& os, const Transformer& t);
 
-    bool operator<(const Transformer& other) const;
-
     private:
+	  std::string _name;
 
       unsigned int _health;
 
@@ -43,6 +42,7 @@ class Transformer {
 
       std::string  _fraction;
 };
+
 
 
 
