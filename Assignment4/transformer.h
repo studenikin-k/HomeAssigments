@@ -5,14 +5,42 @@
 
 class Transformer {
     public:
+
     Transformer(std::string gun_type, int damage, int ammo, std::string fraction);
-    virtual ~Transformer();
+    ~Transformer();
+
+    bool transform();
+    bool attack();
+    bool move();
+    bool jump();
+    bool ultimate();
+
+    unsigned int get_health();
+    unsigned int get_ammo();
+    std::string get_fraction();
+
+	bool phrase();
+
+
+    bool operator==(const Transformer& comparable) const;
+    bool operator!=(const Transformer& comparable) const;
+    bool operator<=(const Transformer& comparable) const;
+    bool operator>=(const Transformer& comparable) const;
+
+    friend std::ostream& operator<<(std::ostream& os, const Transformer& t);
+
+    bool operator<(const Transformer& other) const;
+
     private:
-      int _health;
+
+      unsigned int _health;
+
       std::string _gun_type;
+
       unsigned int _damage;
       unsigned int _move_speed;
       unsigned int _ammo;
+
       std::string  _fraction;
 };
 
