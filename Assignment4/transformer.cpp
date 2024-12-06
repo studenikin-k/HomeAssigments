@@ -4,10 +4,10 @@
 
 
 Transformer::Transformer(std::string name, std::string gun_type, int damage ,int ammo , std::string fraction)
-    : _name(name), _health(100),_gun_type(gun_type), _damage(damage),
-      _move_speed(100), _ammo(ammo), _fraction(fraction)
+    : _name(name),_gun_type(gun_type), _damage(damage), _ammo(ammo), _fraction(fraction)
       {
-
+		set_health(100);
+        set_move_speed(100);
      std::cout<<"Transformer was created"<<std::endl;
 
 }
@@ -65,6 +65,17 @@ unsigned int Transformer::get_ammo(){
 std::string Transformer::get_fraction(){
   return _fraction;
 }
+
+
+void Transformer::set_health(unsigned int health){
+  _health = health;
+}
+
+
+void Transformer::set_move_speed(unsigned int move_speed){
+  _move_speed = move_speed;
+}
+
 
 bool Transformer::phrase(){
 
@@ -127,6 +138,8 @@ bool Transformer::operator>=(const Transformer& comparable) const{
       return true;
 	}
 }
+
+
 
 std::ostream& operator<<(std::ostream& os, const Transformer& transformer){
 	os << "Fraction: " << transformer._fraction << "Name:" << transformer._name

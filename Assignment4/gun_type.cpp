@@ -3,9 +3,17 @@
 
 
 Gun_type::Gun_type(std::string gun_type)
-    : _gun_type(gun_type), _auto_riffle_damage(35), _sniper_riffle_damage(70), _bazooka_damage(100), _arm_damage(50),
-      _ammo_auto_riffle(90), _ammo_sniper_riffle(30), _ammo_bazooka(5), _ammo_arm(100)
+    : _gun_type(gun_type)
 {
+      set_auto_riffle_damage(35);
+      set_sniper_riffle_damage(70);
+      set_bazooka_damage(100);
+      set_arm_damage(50);
+      set_ammo_auto_riffle(90);
+      set_ammo_sniper_riffle(30);
+      set_ammo_bazooka(5);
+      set_ammo_arm(100);
+
       std::cout << "Types of gun was created.\n";
 }
 
@@ -14,35 +22,61 @@ std::string Gun_type::Get_gun_type(){
 }
 
 
-int Gun_type::Get_damage_of_gun(std::string gun_type){
 
-  if (gun_type == "AKM"){
-    return _auto_riffle_damage;
-  }
-  else if (gun_type == "AWP"){
-    return _sniper_riffle_damage;
-  }
-  else if (gun_type == "BAZOOKA"){
-    return _bazooka_damage;
-  }
-  else if (gun_type == "arm"){
-    return _arm_damage;
-  }
-
+void Gun_type::set_auto_riffle_damage(unsigned int damage){
+  _auto_riffle_damage = damage;
+}
+void Gun_type::set_sniper_riffle_damage(unsigned int damage){
+  _sniper_riffle_damage = damage;
+}
+void Gun_type::set_bazooka_damage(unsigned int damage){
+  _bazooka_damage = damage;
 }
 
-int Gun_type::Get_ammo(std::string gun_type){
-   if (gun_type == "AKM"){
-    return _ammo_auto_riffle;
-  }
-  else if (gun_type == "AWP"){
-    return _ammo_sniper_riffle;
-  }
-  else if (gun_type == "BAZOOKA"){
-    return _ammo_bazooka;
-  }
-  else if (gun_type == "arm"){
-    return _ammo_arm;
-  }
+void Gun_type::set_arm_damage(unsigned int damage){
+  _arm_damage = damage;
+}
+void Gun_type::set_ammo_auto_riffle(int ammo){
+  _ammo_auto_riffle = ammo;
+}
+void Gun_type::set_ammo_sniper_riffle(int ammo){
+  _ammo_sniper_riffle = ammo;
+}
+void Gun_type::set_ammo_bazooka(int ammo){
+  _ammo_bazooka = ammo;
+}
+void Gun_type::set_ammo_arm(int ammo){
+  _ammo_arm = ammo;
+}
 
+unsigned int Gun_type::get_auto_riffle_damage(){
+  return _auto_riffle_damage;
+}
+
+unsigned int Gun_type::get_sniper_riffle_damage(){
+  return _sniper_riffle_damage;
+}
+
+unsigned int Gun_type::get_bazooka_damage(){
+  return _bazooka_damage;
+}
+
+unsigned int Gun_type::get_arm_damage(){
+  return _arm_damage;
+}
+
+int Gun_type::get_ammo_auto_riffle(){
+  return _ammo_auto_riffle;
+}
+
+int Gun_type::get_ammo_sniper_riffle(){
+  return _ammo_sniper_riffle;
+}
+
+int Gun_type::get_ammo_bazooka(){
+  return _ammo_bazooka;
+}
+
+int Gun_type::get_ammo_arm(){
+  return _ammo_arm;
 }

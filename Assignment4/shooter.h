@@ -5,6 +5,10 @@
 
 
 class Shooter : public Transformer  {
+	public:
+  		Shooter(std::string name,std::string gun_type, int damage, int ammo, std::string fraction);
+    	~Shooter();
+    private:
 
 };
 

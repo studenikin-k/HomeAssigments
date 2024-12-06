@@ -19,6 +19,9 @@ class Transformer {
     unsigned int get_ammo();
     std::string get_fraction();
 
+    void set_health(unsigned int health);
+    void set_move_speed(unsigned int speed);
+
 	bool phrase();
 
 
@@ -26,6 +29,9 @@ class Transformer {
     bool operator!=(const Transformer& comparable) const;
     bool operator<=(const Transformer& comparable) const;
     bool operator>=(const Transformer& comparable) const;
+	bool operator>(const Transformer& comparable) const;
+    bool operator<(const Transformer& comparable) const;
+
 
     friend std::ostream& operator<<(std::ostream& os, const Transformer& t);
 
