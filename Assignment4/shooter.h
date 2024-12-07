@@ -6,9 +6,15 @@
 
 class Shooter : public Transformer  {
 	public:
-  		Shooter(std::string name,std::string gun_type, int damage, int ammo, std::string fraction);
-    	~Shooter();
-    private:
+  		Shooter(const std::string &name,const std::string &gun_type, int damage, int ammo,const std::string &fraction);
+    	~Shooter() = default;
+
+
+    bool transform();
+    bool attack();
+    bool move();
+    bool jump();
+    bool ultimate();
 
 };
 

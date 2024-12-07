@@ -3,10 +3,10 @@
 #include "gun_type.h"
 
 
-Transformer::Transformer(std::string name, std::string gun_type, int damage ,int ammo , std::string fraction)
+Transformer::Transformer(const std::string &name,const std::string &gun_type, int damage ,int ammo ,const std::string &fraction)
     : _name(name),_gun_type(gun_type), _damage(damage), _ammo(ammo), _fraction(fraction)
       {
-		set_health(100);
+		set_health(200);
         set_move_speed(100);
      std::cout<<"Transformer was created"<<std::endl;
 
@@ -51,18 +51,35 @@ bool Transformer:: ultimate(){
   return true;
 }
 
+std::string Transformer::get_name()const{
+  return _name;
+}
 
-unsigned int Transformer::get_health(){
+
+unsigned int Transformer::get_health()const{
 
   return _health;
 }
 
-unsigned int Transformer::get_ammo(){
+std::string Transformer::get_gun_type()const{
+  return _gun_type;
+}
+
+int Transformer::get_damage()const{
+  return _damage;
+}
+
+unsigned int Transformer::get_move_speed()const{
+  return _move_speed;
+}
+
+
+unsigned int Transformer::get_ammo()const{
 
   return _ammo;
 }
 
-std::string Transformer::get_fraction(){
+std::string Transformer::get_fraction()const{
   return _fraction;
 }
 
@@ -106,6 +123,8 @@ bool Transformer::operator!=(const Transformer& comparable) const{
   }
   else{
   	std::cout<<"Health matches"<<std::endl;
+
+    return false;
   }
 }
 
@@ -142,7 +161,7 @@ bool Transformer::operator>=(const Transformer& comparable) const{
 
 
 std::ostream& operator<<(std::ostream& os, const Transformer& transformer){
-	os << "Fraction: " << transformer._fraction << "Name:" << transformer._name
-    << "Gun:"<< transformer._gun_type << "Health:"<< transformer._health << std::endl;
+	os << "Fraction: " << transformer.get_fraction() << "\nName: " << transformer.get_name()
+    << "\nGun: "<< transformer.get_gun_type() << "\nHealth: "<< transformer.get_health() << std::endl;
     return os;
 }
