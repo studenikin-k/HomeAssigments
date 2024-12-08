@@ -13,6 +13,8 @@ Shooter::Shooter(const std::string &name, const std::string &fraction, const int
     set_ammo(ammo);
     set_move_speed(move_speed);
     set_fraction(fraction);
+    set_rage(0);
+    set_points_to_ulta(0);
 }
 
 bool Shooter::transform() {
@@ -25,6 +27,11 @@ bool Shooter::transform() {
 bool Shooter::attack() {
     std::cout << "Shooter attacks" << std::endl;
 
+    return true;
+}
+
+bool Shooter::defend() {
+    std::cout << "Shooter defends" << std::endl;
     return true;
 }
 

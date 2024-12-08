@@ -93,7 +93,7 @@ public:
 
     bool operator<(const Transformer &comparable) const;
 
-protected:
+private:
     std::string _name;
 
     unsigned int _health;
