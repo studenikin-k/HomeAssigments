@@ -66,18 +66,18 @@ public:
         _fraction = std::move(fraction);
     }
 
-    bool transform();
+    bool transform() const;
 
-    bool attack();
+    bool attack() const;
 
-    bool move();
+    bool move() const;
 
-    bool jump();
+    bool jump() const;
 
     virtual bool ultimate();
 
 
-    bool phrase();
+    static bool phrase();
 
 
     bool operator==(const Transformer &comparable) const;

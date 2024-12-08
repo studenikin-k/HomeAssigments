@@ -10,9 +10,6 @@ class Sniper : public Transformer {
 
   ~Sniper() = default;
 
-
-
-
     static bool scope();
 
     static bool hide();

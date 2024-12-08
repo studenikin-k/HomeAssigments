@@ -22,27 +22,27 @@ Transformer::~Transformer() {
 }
 
 
-bool Transformer::transform() {
+bool Transformer::transform() const {
     std::cout << name() << " transforms" << std::endl;
 
     return true;
 }
 
 
-bool Transformer::attack() {
+bool Transformer::attack() const {
     std::cout << name() << "attacks with" << gun_type() << std::endl;
 
     return true;
 }
 
 
-bool Transformer::move() {
+bool Transformer::move() const {
     std::cout << name() << " moves" << std::endl;
 
     return true;
 }
 
-bool Transformer::jump() {
+bool Transformer::jump() const {
     std::cout << name() << " jumps" << std::endl;
     return true;
 }

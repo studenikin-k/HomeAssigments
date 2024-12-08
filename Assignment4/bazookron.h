@@ -9,15 +9,10 @@ class Bazookron : public Transformer {
             const int &damage, const int &ammo, const int &move_speed);
     ~Bazookron();
 
-    bool transform();
-
-    bool attack();
 
     bool guide_gun();
 
-    bool move();
-
-    bool jump();
+    bool ultimate() override;
 
         unsigned int & stabilization() {
         return _stabilization;

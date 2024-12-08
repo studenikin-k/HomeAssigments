@@ -18,12 +18,14 @@ Bazookron::Bazookron(const std::string &name, const std::string &fraction, const
     std::cout << name << " was created" << std::endl;
 }
 
-Bazookron::~Bazookron() {
-    std::cout << name() << " was destroyed" << std::endl;
-}
 
 
 bool Bazookron::guide_gun() {
     std::cout << name() << " adjusts the weapon to the target" << std::endl;
     return true;
 }
+
+bool Bazookron::ultimate() {
+    std::cout << name() << "loads a 'baby' bomb into a bazooka" << std::endl;
+}
+
