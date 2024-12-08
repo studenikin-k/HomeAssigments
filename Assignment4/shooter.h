@@ -6,26 +6,10 @@
 
 class Shooter : public Transformer {
 public:
-    unsigned int & rage1() {
-        return rage;
-    }
-
-    void set_rage(unsigned int rage) {
-        this->rage = rage;
-    }
-
-    unsigned int & points_to_ulta1() {
-        return points_to_ulta;
-    }
-
-    void set_points_to_ulta(unsigned int points_to_ulta) {
-        this->points_to_ulta = points_to_ulta;
-    }
-
     Shooter(const std::string &name, const std::string &fraction, const int &health, const std::string &gun_type,
             const int &damage, const int &ammo, const int &move_speed);
 
-    ~Shooter() = default;
+    ~Shooter();
 
 
     bool transform();
@@ -40,10 +24,25 @@ public:
 
     bool ultimate();
 
-    private:
+    unsigned int & rage() {
+        return _rage;
+    }
 
-    unsigned int rage;
-    unsigned int points_to_ulta;
+    void set_rage(unsigned int rage) {
+        this->_rage = rage;
+    }
+
+    unsigned int & points_to_ulta() {
+        return _points_to_ulta;
+    }
+
+    void set_points_to_ulta(unsigned int points_to_ulta) {
+        this->_points_to_ulta = points_to_ulta;
+    }
+
+private:
+    unsigned int _rage;
+    unsigned int _points_to_ulta;
 };
 
 

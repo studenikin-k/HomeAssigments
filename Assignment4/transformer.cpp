@@ -13,12 +13,10 @@ Transformer::Transformer(const std::string &name, const std::string &fraction, c
     set_ammo(ammo);
     set_move_speed(move_speed);
     set_fraction(fraction);
-    std::cout << "Transformer was created" << std::endl;
 }
 
 
 Transformer::~Transformer() {
-    std::cout << "Transformer was destroyed" << std::endl;
 }
 
 

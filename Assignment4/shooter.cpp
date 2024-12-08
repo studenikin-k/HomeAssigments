@@ -15,6 +15,11 @@ Shooter::Shooter(const std::string &name, const std::string &fraction, const int
     set_fraction(fraction);
     set_rage(0);
     set_points_to_ulta(0);
+    std::cout << name << " created" << std::endl;
+}
+
+Shooter::~Shooter() {
+    std::cout << "Shooter was destroyed" << std::endl;
 }
 
 bool Shooter::transform() {
