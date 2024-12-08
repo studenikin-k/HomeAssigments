@@ -2,57 +2,69 @@
 #define GUN_TYPE_H
 
 
-
-class Gun
-{
+class Gun {
 public:
-    Gun(std::string );
+
+    Gun(const std::string &gun_type, const unsigned int &damage, const unsigned int &ammo);
+
     ~Gun() = default;
 
-    void set_gun_type(std::string &name)const;
-    void set_damage(unsigned int)const;
-    unsigned int get_damage()const;
-    void set_ammo(unsigned int)const;
-    unsigned int get_ammo()const;
-    std::string Get_gun_type()const;
+    std::string gun_type() const {
+        return _gun_type;
+    }
 
+    void set_gun_type(std::string gun_type) {
+        _gun_type = std::move(gun_type);
+    }
 
+    unsigned int ammo() const {
+        return _ammo;
+    }
 
-    void set_auto_riffle_damage(unsigned int damage);
-    void set_sniper_riffle_damage(unsigned int damage);
-    void set_bazooka_damage(unsigned int damage);
-    void set_arm_damage(unsigned int damage);
-    void set_ammo_auto_riffle(int ammo);
-    void set_ammo_sniper_riffle(int ammo);
-    void set_ammo_bazooka(int ammo);
-    void set_ammo_arm(int ammo);
+    void set_ammo(const unsigned int ammo) {
+        _ammo = ammo;
+    }
 
-    unsigned int get_auto_riffle_damage();
-    unsigned int get_sniper_riffle_damage();
-    unsigned int get_bazooka_damage();
-    unsigned int get_arm_damage();
-    int get_ammo_auto_riffle();
-    int get_ammo_sniper_riffle();
-    int get_ammo_bazooka();
-    int get_ammo_arm();
+    unsigned int damage() const {
+        return _damage;
+    }
 
+    void set_damage(const unsigned int damage) {
+        _damage = damage;
+    }
 
 protected:
     std::string _gun_type;
-
-    unsigned int _auto_riffle_damage{};
-    unsigned int _sniper_riffle_damage{};
-    unsigned int _bazooka_damage{};
-    unsigned int _arm_damage{};
-    int _ammo_auto_riffle{};
-    int _ammo_sniper_riffle{};
-    int _ammo_bazooka{};
-    int _ammo_arm{};
+    unsigned int _ammo;
+    unsigned int _damage;
 };
 
-class AKM : public Gun
-{
+class AKM : public Gun {
 public:
-    AKM(std::string &name);
+    AKM(const std::string &name, const unsigned int &damage, const unsigned int &ammo);
+
+    ~AKM() = default;
 };
+
+class AWP : public Gun {
+public:
+    AWP(const std::string &name, const unsigned int &damage, const unsigned int &ammo);
+
+    ~AWP() = default;
+};
+
+class Bazooka : public Gun {
+public:
+    Bazooka(const std::string &name, const unsigned int &damage, const unsigned int &ammo);
+
+    ~Bazooka() = default;
+};
+
+class Arm : public Gun {
+public:
+    Arm(const std::string &name, const unsigned int &damage, const unsigned int &ammo);
+
+    ~Arm() = default;
+};
+
 #endif //GUN_TYPE_H

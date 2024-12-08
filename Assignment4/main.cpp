@@ -3,14 +3,12 @@
 #include "transformer.h"
 
 int main() {
-  Gun akm = Gun("AKM");
-  Transformer transformer = Transformer("Transformer",
-    akm.Get_gun_type(),
-    akm.get_auto_riffle_damage(),
-    akm.get_ammo_auto_riffle(),
-    "Divine"
-);
+    AKM akm = AKM("AKM", 30, 90);
+    Transformer transformer = Transformer("Transformer", "Divine", 200,
+                                          akm.gun_type(),
+                                          akm.damage(),
+                                          akm.ammo(),
+                                          100);
 
-  std::cout << transformer << std::endl;
-
+    std::cout << transformer << std::endl;
 }

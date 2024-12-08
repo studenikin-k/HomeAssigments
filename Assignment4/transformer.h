@@ -4,55 +4,109 @@
 #include "gun_type.h"
 
 class Transformer {
-    public:
+public:
+    Transformer(const std::string &name, const std::string &fraction, const int &health, const std::string &gun_type,
+                const int &damage, const int &ammo, const int &move_speed);
 
-    Transformer(const std::string &name,const std::string &gun_type, int damage, int ammo, const std::string &fraction);
     ~Transformer();
 
+    std::string name() const {
+        return _name;
+    }
+
+    void set_name(std::string name) {
+        _name = std::move(name);
+    }
+
+    unsigned int health() const {
+        return _health;
+    }
+
+    void set_health(unsigned int health) {
+        _health = health;
+    }
+
+    std::string gun_type() const {
+        return _gun_type;
+    }
+
+    void set_gun_type(std::string gun_type) {
+        _gun_type = std::move(gun_type);
+    }
+
+    unsigned int damage() const {
+        return _damage;
+    }
+
+    void set_damage(unsigned int damage) {
+        _damage = damage;
+    }
+
+    unsigned int move_speed() const {
+        return _move_speed;
+    }
+
+    void set_move_speed(unsigned int move_speed) {
+        _move_speed = move_speed;
+    }
+
+    unsigned int ammo() const {
+        return _ammo;
+    }
+
+    void set_ammo(unsigned int ammo) {
+        _ammo = ammo;
+    }
+
+    std::string fraction() const {
+        return _fraction;
+    }
+
+
+    void set_fraction(std::string fraction) {
+        _fraction = std::move(fraction);
+    }
+
     bool transform();
+
     bool attack();
+
     bool move();
+
     bool jump();
+
     bool ultimate();
 
-    std::string get_name()const;
-    unsigned int get_health()const;
-    std::string get_gun_type()const;
-    int get_damage()const;
-    unsigned int get_move_speed()const;
-    unsigned int get_ammo()const;
-    std::string get_fraction()const;
 
-    void set_health(unsigned int health);
-    void set_move_speed(unsigned int speed);
-
-	bool phrase();
+    bool phrase();
 
 
-    bool operator==(const Transformer& comparable) const;
-    bool operator!=(const Transformer& comparable) const;
-    bool operator<=(const Transformer& comparable) const;
-    bool operator>=(const Transformer& comparable) const;
-	bool operator>(const Transformer& comparable) const;
-    bool operator<(const Transformer& comparable) const;
+    bool operator==(const Transformer &comparable) const;
 
+    bool operator!=(const Transformer &comparable) const;
 
+    bool operator<=(const Transformer &comparable) const;
 
-    protected:
-	  std::string _name;
+    bool operator>=(const Transformer &comparable) const;
 
-      unsigned int _health;
+    bool operator>(const Transformer &comparable) const;
 
-      std::string _gun_type;
+    bool operator<(const Transformer &comparable) const;
 
-      unsigned int _damage;
-      unsigned int _move_speed;
-      unsigned int _ammo;
-      std::string  _fraction;
+protected:
+    std::string _name;
 
+    unsigned int _health;
+
+    std::string _gun_type;
+
+    unsigned int _damage;
+    unsigned int _move_speed;
+    unsigned int _ammo;
+    std::string _fraction;
 };
 
-std::ostream& operator<<(std::ostream& os, const Transformer& t);
+std::ostream &operator<<(std::ostream &os, const Transformer &t);
 
 
 #endif //TRANSFORMER_H
