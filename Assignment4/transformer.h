@@ -1,7 +1,6 @@
 #ifndef TRANSFORMER_H
 #define TRANSFORMER_H
 #include <iostream>
-#include "gun_type.h"
 
 class Transformer {
 public:
@@ -75,7 +74,7 @@ public:
 
     bool jump();
 
-    bool ultimate();
+    virtual bool ultimate();
 
 
     bool phrase();

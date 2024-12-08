@@ -13,30 +13,37 @@ Transformer::Transformer(const std::string &name, const std::string &fraction, c
     set_ammo(ammo);
     set_move_speed(move_speed);
     set_fraction(fraction);
+    std::cout << name << " was created" << std::endl;
 }
 
 
 Transformer::~Transformer() {
+    std::cout << name() << " was destroyed" << std::endl;
 }
 
 
 bool Transformer::transform() {
-    std::cout << "Transformer transforms" << std::endl;
+    std::cout << name() << " transforms" << std::endl;
 
     return true;
 }
 
 
 bool Transformer::attack() {
-    std::cout << "Transformer attacks with" << _gun_type << std::endl;
+    std::cout << name() << "attacks with" << gun_type() << std::endl;
 
     return true;
 }
 
 
 bool Transformer::move() {
-    std::cout << "Transformer moves" << std::endl;
+    std::cout << name() << " moves" << std::endl;
 
+    return true;
+}
+
+bool Transformer::jump() {
+    std::cout << name() << " jumps" << std::endl;
     return true;
 }
 
