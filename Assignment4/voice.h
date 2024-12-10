@@ -9,7 +9,7 @@ public:
 
     ~Voice()=default;
 
-    std::string voice() const
+    std::string get_voice() const
     {
         return _voice;
     }
@@ -19,7 +19,7 @@ public:
         this->_voice = voice;
     }
 
-    bool phrase() const;
+    bool get_phrase() const;
 
 private:
     std::string _voice;

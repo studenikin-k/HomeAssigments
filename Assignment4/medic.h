@@ -6,10 +6,9 @@
 class Medic : public Transformer
 {
 public:
-
-
     Medic(const std::string &name, const std::string &fraction, const int &health, const std::string &gun_type,
           const int &damage, const int &ammo, const int &move_speed);
+
     ~Medic() = default;
 
     bool heal() const;
@@ -17,8 +16,7 @@ public:
     bool ultimate() override;
 
 
-
-    unsigned int medicines() const
+    unsigned int get_medicines() const
     {
         return _medicines;
     }
@@ -28,7 +26,7 @@ public:
         _medicines = medicines;
     }
 
-    unsigned int points_to_ulta() const
+    unsigned int get_points_to_ulta() const
     {
         return _points_to_ulta;
     }
@@ -37,11 +35,11 @@ public:
     {
         _points_to_ulta = points_to_ulta;
     }
+
 private:
     unsigned int _medicines;
     unsigned int _points_to_ulta;
 };
-
 
 
 #endif //MEDIC_H

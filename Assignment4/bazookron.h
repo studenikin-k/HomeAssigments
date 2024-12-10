@@ -15,7 +15,7 @@ public:
 
     bool ultimate() override;
 
-    unsigned int & stabilization()
+    unsigned int & get_stabilization()
     {
         return _stabilization;
     }
@@ -25,7 +25,7 @@ public:
         this->_stabilization = stabilization;
     }
 
-    unsigned int & points_to_ulta()
+    unsigned int & get_points_to_ulta()
     {
         return _points_to_ulta;
     }

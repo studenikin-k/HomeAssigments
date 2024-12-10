@@ -10,7 +10,7 @@ public:
 
     ~Gun() = default;
 
-    std::string gun_type() const
+    std::string get_gun_type() const
     {
         return _gun_type;
     }
@@ -20,7 +20,7 @@ public:
         _gun_type = std::move(gun_type);
     }
 
-    unsigned int ammo() const
+    unsigned int get_ammo() const
     {
         return _ammo;
     }
@@ -30,7 +30,7 @@ public:
         _ammo = ammo;
     }
 
-    unsigned int damage() const
+    unsigned int get_damage() const
     {
         return _damage;
     }

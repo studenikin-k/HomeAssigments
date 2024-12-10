@@ -19,13 +19,13 @@ Medic::Medic(const std::string &name, const std::string &fraction, const int &he
 
 bool Medic::heal() const
 {
-    std::cout << name() << " use medicines to heal" << std::endl;
+    std::cout << get_name() << " use medicines to heal" << std::endl;
 
     return true;
 }
 
 bool Medic::ultimate()
 {
-    std::cout << name() << "returns to alive" << std::endl;
+    std::cout << get_name() << "returns to alive" << std::endl;
     return true;
 }

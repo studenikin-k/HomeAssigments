@@ -21,7 +21,7 @@ Shooter::Shooter(const std::string &name, const std::string &fraction, const int
 
 bool Shooter::defend()
 {
-    std::cout << "Shooter defends" << std::endl;
+    std::cout << get_name() << " defends" << std::endl;
 
     return true;
 }
@@ -29,7 +29,7 @@ bool Shooter::defend()
 
 bool Shooter::ultimate()
 {
-    std::cout << "Shooter take a second riffle" << std::endl;
+    std::cout << get_name() << " take a second riffle" << std::endl;
 
     return true;
 }

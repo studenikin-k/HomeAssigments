@@ -35,6 +35,6 @@ bool Sniper::hide()
 
 bool Sniper::ultimate()
 {
-    std::cout << "Sniper take a breath and shoot headshot" << std::endl;
+    std::cout << get_name() <<" take a breath and shoot headshot" << std::endl;
     return true;
 }

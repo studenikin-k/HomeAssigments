@@ -11,11 +11,11 @@ public:
 
     ~Shooter() override = default;
 
-    static bool defend();
+    bool defend();
 
-    bool ultimate() override ;
+    bool ultimate() override;
 
-    unsigned int & rage()
+    unsigned int &get_rage()
     {
         return _rage;
     }
@@ -25,7 +25,7 @@ public:
         this->_rage = rage;
     }
 
-    unsigned int & points_to_ulta()
+    unsigned int &get_points_to_ulta()
     {
         return _points_to_ulta;
     }

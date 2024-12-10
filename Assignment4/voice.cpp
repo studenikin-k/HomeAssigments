@@ -11,9 +11,10 @@ Voice::Voice(std::string voice)
 
 
 
-bool Voice::phrase() const
+bool Voice::get_phrase() const
 {
-    std::cout << _voice << std::endl;
+
+    std::cout << _voice << " and something else"<< std::endl;
     return true;
 }
 

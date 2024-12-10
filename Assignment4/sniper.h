@@ -17,7 +17,7 @@ public:
 
     bool ultimate() override;
 
-    unsigned int & mind_control()
+    unsigned int &get_mind_control()
     {
         return _mind_control;
     }
@@ -27,23 +27,20 @@ public:
         this->_mind_control = mind_control;
     }
 
-    unsigned int & points_to_ulta()
+    unsigned int &get_points_to_ulta()
     {
         return _points_to_ulta;
     }
 
     void set_points_to_ulta(unsigned int points_to_ulta)
     {
-
         this->_points_to_ulta = points_to_ulta;
     }
-
 
 private:
     unsigned int _mind_control{};
     unsigned int _points_to_ulta{};
 };
-
 
 
 #endif //SNIPER_H

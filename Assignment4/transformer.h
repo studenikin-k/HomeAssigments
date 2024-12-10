@@ -15,7 +15,7 @@ public:
 
     virtual ~Transformer();
 
-    std::string name() const
+    std::string get_name() const
     {
         return _name;
     }
@@ -25,7 +25,7 @@ public:
         _name = std::move(name);
     }
 
-    unsigned int health() const
+    unsigned int get_health() const
     {
         return _health;
     }
@@ -35,7 +35,7 @@ public:
         _health = health;
     }
 
-    std::string gun_type() const
+    std::string get_gun_type() const
     {
         return _gun_type;
     }
@@ -45,7 +45,7 @@ public:
         _gun_type = std::move(gun_type);
     }
 
-    unsigned int damage() const
+    unsigned int get_damage() const
     {
         return _damage;
     }
@@ -65,7 +65,7 @@ public:
         _move_speed = move_speed;
     }
 
-    unsigned int ammo() const
+    unsigned int get_ammo() const
     {
         return _ammo;
     }
@@ -75,7 +75,7 @@ public:
         _ammo = ammo;
     }
 
-    std::string fraction() const
+    std::string get_fraction() const
     {
         return _fraction;
     }
@@ -86,12 +86,12 @@ public:
         _fraction = std::move(fraction);
     }
 
-    Voice *voice() const
+    Voice *get_voice() const
     {
         return _voice;
     }
 
-    void  set_voice(const Voice &voice)
+    void set_voice(const Voice &voice)
     {
         if (_voice != nullptr)
         {
