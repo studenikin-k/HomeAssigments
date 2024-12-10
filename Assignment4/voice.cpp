@@ -4,11 +4,16 @@
 #include <ostream>
 
 
-Voice::Voice(std::string voice) {
+Voice::Voice(std::string voice)
+{
     set_voice(voice);
 }
 
-bool Voice::phrase() {
+
+
+bool Voice::phrase() const
+{
     std::cout << _voice << std::endl;
     return true;
 }
+

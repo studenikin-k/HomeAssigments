@@ -1,10 +1,12 @@
-#include <gtest/gtest.h>
+#include "gtest/gtest.h"
 #include "transformer.h"
 #include "gun_type.h"
 #include "voice.h"
+#include "sniper.h"
 
 
-TEST(Gun, check_gun_type_class) {
+TEST(Gun_type, check_gun_type_class)
+{
     Gun gun("AKM", 30, 30);
     EXPECT_EQ(gun.gun_type(), "AKM");
     EXPECT_EQ(gun.ammo(), 30);
@@ -17,7 +19,8 @@ TEST(Gun, check_gun_type_class) {
     EXPECT_EQ(gun.ammo(), 45);
 }
 
-TEST(Transformer, check_transformer_parameters) {
+TEST(Transformer, check_transformer_parameters)
+{
     Gun gun("AKM", 30, 90);
 
     Transformer transformer("Transformer", "Divine", 200, gun.gun_type(), gun.damage(), gun.ammo(), 100);
@@ -51,23 +54,25 @@ TEST(Transformer, check_transformer_parameters) {
     EXPECT_EQ(transformer.move_speed(), 130);
 }
 
-TEST(Transformer,check_transformer_methods) {
+TEST(Transformer,check_transformer_methods)
+{
     Gun gun("AKM", 30, 90);
 
     Transformer transformer("Transformer", "Divine", 200, gun.gun_type(), gun.damage(), gun.ammo(), 100);
 
-    GTEST_EXPECT_TRUE(transformer.transform());
-    GTEST_EXPECT_TRUE(transformer.attack());
-    GTEST_EXPECT_TRUE(transformer.move());
-    GTEST_EXPECT_TRUE(transformer.jump());
-    GTEST_EXPECT_TRUE(transformer.ultimate());
-    GTEST_EXPECT_TRUE(transformer.phrase());
+    EXPECT_TRUE(transformer.transform());
+    EXPECT_TRUE(transformer.attack());
+    EXPECT_TRUE(transformer.move());
+    EXPECT_TRUE(transformer.jump());
+    EXPECT_TRUE(transformer.ultimate());
+    EXPECT_TRUE(transformer.phrase());
 
 }
 
-TEST(Transformer, check_overloading) {
+TEST(Transformer, check_constructor_overloading)
+{
     Voice voice("English");
     Gun gun("AKM", 30, 90);
     Transformer transformer("Transformer", "Divine", 200, gun.gun_type(), gun.damage(), gun.ammo(), 100, voice);
-    EXPECT_EQ(transformer.voice(), voice.voice());
+    EXPECT_EQ(transformer.voice()->voice(), "English");
 }

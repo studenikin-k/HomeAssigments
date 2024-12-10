@@ -4,7 +4,8 @@
 
 #include "voice.h"
 
-class Transformer {
+class Transformer
+{
 public:
     Transformer(const std::string &name, const std::string &fraction, const int &health, const std::string &gun_type,
                 const int &damage, const int &ammo, const int &move_speed, const Voice &voice);
@@ -14,69 +15,86 @@ public:
 
     virtual ~Transformer();
 
-    std::string name() const {
+    std::string name() const
+    {
         return _name;
     }
 
-    void set_name(std::string name) {
+    void set_name(std::string name)
+    {
         _name = std::move(name);
     }
 
-    unsigned int health() const {
+    unsigned int health() const
+    {
         return _health;
     }
 
-    void set_health(unsigned int health) {
+    void set_health(unsigned int health)
+    {
         _health = health;
     }
 
-    std::string gun_type() const {
+    std::string gun_type() const
+    {
         return _gun_type;
     }
 
-    void set_gun_type(std::string gun_type) {
+    void set_gun_type(std::string gun_type)
+    {
         _gun_type = std::move(gun_type);
     }
 
-    unsigned int damage() const {
+    unsigned int damage() const
+    {
         return _damage;
     }
 
-    void set_damage(unsigned int damage) {
+    void set_damage(unsigned int damage)
+    {
         _damage = damage;
     }
 
-    unsigned int move_speed() const {
+    unsigned int move_speed() const
+    {
         return _move_speed;
     }
 
-    void set_move_speed(unsigned int move_speed) {
+    void set_move_speed(unsigned int move_speed)
+    {
         _move_speed = move_speed;
     }
 
-    unsigned int ammo() const {
+    unsigned int ammo() const
+    {
         return _ammo;
     }
 
-    void set_ammo(unsigned int ammo) {
+    void set_ammo(unsigned int ammo)
+    {
         _ammo = ammo;
     }
 
-    std::string fraction() const {
+    std::string fraction() const
+    {
         return _fraction;
     }
 
 
-    void set_fraction(std::string fraction) {
+    void set_fraction(std::string fraction)
+    {
         _fraction = std::move(fraction);
     }
 
-    Voice *voice() const {
+    Voice *voice() const
+    {
         return _voice;
     }
 
-    void  set_voice(const Voice &voice) {
-        if (_voice != nullptr) {
+    void  set_voice(const Voice &voice)
+    {
+        if (_voice != nullptr)
+        {
             *_voice = voice;
             return;
         }
