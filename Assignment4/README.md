@@ -9,3 +9,5 @@ Create a hierarchy of transformers with overload constructor and operators
 make
 ## Run
 ./tests
+## Format
+make format
