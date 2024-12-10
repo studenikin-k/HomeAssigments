@@ -1,6 +1,21 @@
 #include <iostream>
 #include "transformer.h"
-#include "gun_type.h"
+#include "voice.h"
+
+
+Transformer::Transformer(const std::string &name, const std::string &fraction, const int &health,
+                         const std::string &gun_type, const int &damage, const
+                         int &ammo, const int &move_speed, const Voice &voice) {
+    set_name(name);
+    set_health(health);
+    set_gun_type(gun_type);
+    set_damage(damage);
+    set_ammo(ammo);
+    set_move_speed(move_speed);
+    set_fraction(fraction);
+    _voice = new Voice(voice);
+    std::cout << name << " was created" << std::endl;
+}
 
 
 Transformer::Transformer(const std::string &name, const std::string &fraction, const int &health,
@@ -13,11 +28,14 @@ Transformer::Transformer(const std::string &name, const std::string &fraction, c
     set_ammo(ammo);
     set_move_speed(move_speed);
     set_fraction(fraction);
+    _voice = nullptr;
     std::cout << name << " was created" << std::endl;
 }
 
 
 Transformer::~Transformer() {
+    delete _voice;
+    _voice = nullptr;
     std::cout << name() << " was destroyed" << std::endl;
 }
 

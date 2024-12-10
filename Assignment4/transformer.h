@@ -2,8 +2,13 @@
 #define TRANSFORMER_H
 #include <iostream>
 
+#include "voice.h"
+
 class Transformer {
 public:
+    Transformer(const std::string &name, const std::string &fraction, const int &health, const std::string &gun_type,
+                const int &damage, const int &ammo, const int &move_speed, const Voice &voice);
+
     Transformer(const std::string &name, const std::string &fraction, const int &health, const std::string &gun_type,
                 const int &damage, const int &ammo, const int &move_speed);
 
@@ -66,6 +71,18 @@ public:
         _fraction = std::move(fraction);
     }
 
+    Voice *voice() const {
+        return _voice;
+    }
+
+    void  set_voice(const Voice &voice) {
+        if (_voice != nullptr) {
+            *_voice = voice;
+            return;
+        }
+        _voice = new Voice(voice);
+    }
+
     bool transform() const;
 
     bool attack() const;
@@ -103,6 +120,8 @@ private:
     unsigned int _move_speed;
     unsigned int _ammo;
     std::string _fraction;
+
+    Voice *_voice;
 };
 
 std::ostream &operator<<(std::ostream &os, const Transformer &t);
