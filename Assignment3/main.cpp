@@ -1,24 +1,16 @@
 #include <iostream>
-#include "autobot.h"
-#include "decepticon.h"
-#include "maximal.h"
+#include "gun_type.h"
+#include "transformer.h"
+#include "shooter.h"
 
-int main() {
-    Autobot autobot;
-    autobot.move();
-    autobot.assist();
+int main()
+{
+    AKM akm = AKM("AKM", 30, 90);
+    Transformer transformer = Transformer("Transformer", "Divine", 200,
+                                          akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 100);
 
-    std::cout << "-----------------------\n";
+    Shooter shooter = Shooter("Shooter", "Autobot", 100,
+                              akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 100);
 
-    Decepticon decepticon;
-    decepticon.move();
-    decepticon.sabotage();
 
-    std::cout << "-----------------------\n";
-
-    Maximal maximal;
-    maximal.move();
-    maximal.shield();
-
-    return 0;
 }

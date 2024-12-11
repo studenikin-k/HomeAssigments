@@ -1,32 +1,15 @@
-TEST_TARGET = test_transformers
+CC=g++
+CFLAGS= -Werror -Wpedantic -Wall -std=c++17
+LDFLAGS=  -lgtest -lgtest_main -lpthread
+SOURCES=gun_type.cpp shooter.cpp transformer.cpp sniper.cpp medic.cpp bazookron.cpp voice.cpp tests.cpp
+EXECUTABLE=tests
 
-CXX = g++
-CXXFLAGS = -Wall -std=c++17 -I/usr/include/gtest
+all: $(SOURCES) $(EXECUTABLE)
 
-LIBS = -lgtest -lgtest_main -pthread
+$(EXECUTABLE): $(OBJECTS)
+	$(CC) $(SOURCES) $(CFLAGS) $(LDFLAGS) $(OBJECTS) -o $@
 
-SRCS = test_transformers.cpp transformer.cpp autobot.cpp decepticon.cpp maximal.cpp
-OBJS = test_transformers.o transformer.o autobot.o decepticon.o maximal.o
-
-all: $(TEST_TARGET)
-
-$(TEST_TARGET): $(OBJS)
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
-
-test_transformers.o: test_transformers.cpp transformer.h autobot.h decepticon.h maximal.h
-	$(CXX) $(CXXFLAGS) -c test_transformers.cpp
-
-transformer.o: transformer.cpp transformer.h
-	$(CXX) $(CXXFLAGS) -c transformer.cpp
-
-autobot.o: autobot.cpp autobot.h transformer.h
-	$(CXX) $(CXXFLAGS) -c autobot.cpp
-
-decepticon.o: decepticon.cpp decepticon.h transformer.h
-	$(CXX) $(CXXFLAGS) -c decepticon.cpp
-
-maximal.o: maximal.cpp maximal.h transformer.h
-	$(CXX) $(CXXFLAGS) -c maximal.cpp
+.PHONY: clean
 
 clean:
-	rm *.o $(TEST_TARGET)
+	rm -rf $(EXECUTABLE)
