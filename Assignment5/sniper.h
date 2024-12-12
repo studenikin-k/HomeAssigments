@@ -14,6 +14,8 @@ public:
 
     bool hide();
 
+    bool attack() const override;
+
     bool ultimate() override;
 
     unsigned int &get_mind_control() {

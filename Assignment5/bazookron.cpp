@@ -34,3 +34,11 @@ bool Bazookron::ultimate() {
 
     return true;
 }
+
+bool Bazookron::attack() const {
+    std::cout << get_name() << " attacks with a baby and destroy" << std::endl;
+
+    std::cout << get_class_name << " Method: " << __func__ << std::endl;
+
+    return true;
+}

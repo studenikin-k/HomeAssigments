@@ -13,6 +13,8 @@ public:
 
     bool guide_gun();
 
+    bool attack() const override;
+
     bool ultimate() override;
 
     unsigned int & get_stabilization()

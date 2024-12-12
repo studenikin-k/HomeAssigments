@@ -5,8 +5,7 @@
 Shooter::Shooter(const std::string &name, const std::string &fraction, const int &health,
                  const std::string &gun_type, const int &damage, const
                  int &ammo, const int &move_speed): Transformer(name, fraction, health, gun_type, damage, ammo,
-                             move_speed)
-{
+                                                                move_speed) {
     set_name(name);
     set_health(health);
     set_gun_type(gun_type);
@@ -19,19 +18,25 @@ Shooter::Shooter(const std::string &name, const std::string &fraction, const int
 }
 
 
-bool Shooter::defend()
-{
+bool Shooter::defend() {
     std::cout << get_name() << " defends" << std::endl;
 
-    std::cout <<  get_class_name() << " Method: " << __func__ << std::endl;
+    std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 
     return true;
 }
 
 
-bool Shooter::ultimate()
-{
+bool Shooter::ultimate() {
     std::cout << get_name() << " take a second riffle" << std::endl;
+
+    std::cout << get_class_name() << " Method: " << __func__ << std::endl;
+
+    return true;
+}
+
+bool Shooter::attack() const {
+    std::cout << get_name() << " attacks at the middle distanse" << std::endl;
 
     std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 

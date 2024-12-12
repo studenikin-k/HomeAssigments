@@ -103,7 +103,7 @@ public:
 
     bool transform() const;
 
-    bool attack() const;
+    virtual bool attack() const;
 
     bool move() const;
 

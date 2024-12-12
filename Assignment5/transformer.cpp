@@ -15,7 +15,7 @@ Transformer::Transformer(const std::string &name, const std::string &fraction, c
     set_fraction(fraction);
     _voice = new Voice(voice);
     std::cout << name << " was created" << std::endl;
-    std::cout <<  get_class_name() << " Method: " << __func__ << std::endl;
+    std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 }
 
 
@@ -31,7 +31,7 @@ Transformer::Transformer(const std::string &name, const std::string &fraction, c
     set_fraction(fraction);
     _voice = nullptr;
     std::cout << name << " was created" << std::endl;
-    std::cout <<  get_class_name() << " Method: " << __func__ << std::endl;
+    std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 }
 
 
@@ -40,14 +40,14 @@ Transformer::~Transformer() {
     _voice = nullptr;
     std::cout << get_name() << " was destroyed" << std::endl;
 
-    std::cout <<  get_class_name() << " Method: " << __func__ << std::endl;
+    std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 }
 
 
 bool Transformer::transform() const {
     std::cout << get_name() << " transforms" << std::endl;
 
-    std::cout <<  get_class_name() << " Method: " << __func__ << std::endl;
+    std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 
     return true;
 }
@@ -56,7 +56,7 @@ bool Transformer::transform() const {
 bool Transformer::attack() const {
     std::cout << get_name() << " attacks with " << get_gun_type() << std::endl;
 
-    std::cout <<  get_class_name() << " Method: " << __func__ << std::endl;
+    std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 
     return true;
 }
@@ -65,7 +65,7 @@ bool Transformer::attack() const {
 bool Transformer::move() const {
     std::cout << get_name() << " moves" << std::endl;
 
-    std::cout <<  get_class_name() << " Method: " << __func__ << std::endl;
+    std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 
     return true;
 }
@@ -73,7 +73,7 @@ bool Transformer::move() const {
 bool Transformer::jump() const {
     std::cout << get_name() << " jumps" << std::endl;
 
-    std::cout <<  get_class_name() << " Method: " << __func__ << std::endl;
+    std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 
     return true;
 }
@@ -81,7 +81,7 @@ bool Transformer::jump() const {
 bool Transformer::ultimate() {
     std::cout << "Transformer ultimates" << std::endl;
 
-    std::cout <<  get_class_name() << " Method: " << __func__ << std::endl;
+    std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 
     return true;
 }
@@ -90,7 +90,7 @@ bool Transformer::ultimate() {
 bool Transformer::phrase() {
     std::cout << "Today you will die!" << std::endl;
 
-    std::cout <<  get_class_name() << " Method: " << __func__ << std::endl;
+    std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 
     return true;
 }
@@ -170,5 +170,3 @@ std::ostream &operator<<(std::ostream &os, const Transformer &transformer) {
             << "\nHealth: " << transformer.get_health() << std::endl;
     return os;
 }
-
-

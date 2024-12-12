@@ -42,3 +42,8 @@ bool Sniper::ultimate() {
 
     return true;
 }
+
+bool Sniper::attack() const {
+    std::cout << get_name() << "use scope to heart and shoot" << std::endl;
+}
+

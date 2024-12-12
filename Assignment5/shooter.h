@@ -15,6 +15,8 @@ public:
 
     bool ultimate() override;
 
+    bool attack() const override;
+
     unsigned int &get_rage()
     {
         return _rage;

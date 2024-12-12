@@ -13,6 +13,8 @@ public:
 
     bool heal() const;
 
+    bool attack() const override;
+
     bool ultimate() override;
 
 
