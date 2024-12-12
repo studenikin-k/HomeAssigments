@@ -38,7 +38,7 @@ public:
         _points_to_ulta = points_to_ulta;
     }
 
-    std::string get_class_name() const {
+    std::string get_class_name() const override {
         std::string name = "Class: Medic\n";
         return name;
     }

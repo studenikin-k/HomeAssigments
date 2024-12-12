@@ -35,7 +35,7 @@ public:
     }
 
     std::string get_class_name() const {
-        std::string name = "Class: Transformer\n";
+        std::string name = "Class: Sniper\n";
         return name;
     }
 

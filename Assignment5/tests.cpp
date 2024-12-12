@@ -6,7 +6,7 @@
 #include "shooter.h"
 #include "bazookron.h"
 #include "medic.h"
-
+#include <vector>
 
 TEST(Gun_type, check_gun_type_class)
 {
@@ -147,6 +147,7 @@ TEST(Sniper, test_class_sniper)
     EXPECT_EQ(sniper.get_mind_control(), 100);
     EXPECT_EQ(sniper.get_points_to_ulta(), 100);
 
+    EXPECT_TRUE(sniper.scope());
     EXPECT_TRUE(sniper.hide());
     EXPECT_TRUE(sniper.ultimate());
 }
@@ -183,4 +184,61 @@ TEST(Medic, test_class_medic)
 
     EXPECT_EQ(medic.get_medicines(), 10);
     EXPECT_EQ(medic.get_points_to_ulta(), 100);
+}
+
+TEST(Transformer, test_parent_type_pointer) {
+    Transformer* transformer;
+
+    AKM akm("AKM", 30, 90);
+    Shooter shooter("Shooter", "Autobot", 100, akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 100);
+
+    transformer = &shooter;
+
+    EXPECT_TRUE(transformer->ultimate());
+    EXPECT_TRUE(transformer->attack());
+    EXPECT_EQ(transformer->get_class_name(),shooter.get_class_name());
+
+    AWP awp("AWP", 70, 30);
+    Sniper sniper("Sniper", "Decepticon", 120, awp.get_gun_type(), awp.get_damage(), awp.get_ammo(), 70);
+
+    transformer = &sniper;
+
+    EXPECT_TRUE(transformer->ultimate());
+    EXPECT_TRUE(transformer->attack());
+    EXPECT_EQ(transformer->get_class_name(),sniper.get_class_name());
+
+    Arm arm("Arm", 60, 1 << 31);
+    Medic medic("Doctor", "Autobot", 300, arm.get_gun_type(), arm.get_damage(), arm.get_ammo(), 200);
+
+    transformer = &medic;
+
+    EXPECT_TRUE(transformer->ultimate());
+    EXPECT_TRUE(transformer->attack());
+    EXPECT_EQ(transformer->get_class_name(),medic.get_class_name());
+
+    Bazooka bazooka("Bazooka", 100, 5);
+    Bazookron bazookron("Bazookron","Decepticon",120,bazooka.get_gun_type(), bazooka.get_damage(),bazooka.get_ammo(),300);
+
+    transformer = &bazookron;
+
+    EXPECT_TRUE(transformer->ultimate());
+    EXPECT_TRUE(transformer->attack());
+    EXPECT_EQ(transformer->get_class_name(),bazookron.get_class_name());
+}
+
+TEST(Transformer, check_vector_of_pointers) {
+    std::vector<Transformer*>;
+    AKM akm("AKM", 30, 90);
+    AWP awp("AWP", 70, 30);
+    Bazooka bazooka("Bazooka", 100, 5);
+    Arm arm("Arm", 60, 1 << 31);
+
+
+    Shooter Avtomat("Avtomat", "Autobot", 100, akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 100);
+    Shooter Pulemet("Pulemet", "Autobot", 100, akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 100);
+    Shooter Pistolet("Pistolet", "Autobot", 100, akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 100);
+
+
+
+
 }

@@ -37,8 +37,8 @@ public:
         this->_points_to_ulta = points_to_ulta;
     }
 
-    std::string get_class_name() const {
-        std::string name = "Class: Transformer\n";
+    std::string get_class_name() const override{
+        std::string name = "Class: Shooter\n";
         return name;
     }
 

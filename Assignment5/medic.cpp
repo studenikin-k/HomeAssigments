@@ -33,7 +33,7 @@ bool Medic::ultimate() {
 }
 
 bool Medic::attack() const {
-    std::cout << get_name << "punch with uppercut" << std::endl;
+    std::cout << get_name() << "punch with uppercut" << std::endl;
 
     std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 
