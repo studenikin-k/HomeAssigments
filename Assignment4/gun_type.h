@@ -2,7 +2,8 @@
 #define GUN_TYPE_H
 
 
-class Gun {
+class Gun
+{
 public:
     Gun(const std::string &gun_type, const unsigned int &damage, const unsigned int &ammo);
 
@@ -26,28 +27,32 @@ protected:
     unsigned int _damage;
 };
 
-class AKM : public Gun {
+class AKM : public Gun
+{
 public:
     AKM(const std::string &name, const unsigned int &damage, const unsigned int &ammo);
 
     ~AKM() = default;
 };
 
-class AWP : public Gun {
+class AWP : public Gun
+{
 public:
     AWP(const std::string &name, const unsigned int &damage, const unsigned int &ammo);
 
     ~AWP() = default;
 };
 
-class Bazooka : public Gun {
+class Bazooka : public Gun
+{
 public:
     Bazooka(const std::string &name, const unsigned int &damage, const unsigned int &ammo);
 
     ~Bazooka() = default;
 };
 
-class Arm : public Gun {
+class Arm : public Gun
+{
 public:
     Arm(const std::string &name, const unsigned int &damage, const unsigned int &ammo);
 

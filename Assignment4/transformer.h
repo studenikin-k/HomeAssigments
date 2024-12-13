@@ -4,7 +4,8 @@
 
 #include "voice.h"
 
-class Transformer {
+class Transformer
+{
 public:
     Transformer(const std::string &name, const std::string &fraction, const int &health, const std::string &gun_type,
                 const int &damage, const int &ammo, const int &move_speed, const Voice &voice);

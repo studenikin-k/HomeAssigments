@@ -10,11 +10,13 @@ Voice::Voice(std::string voice)
 }
 
 
-std::string Voice::get_voice() const {
+std::string Voice::get_voice() const
+{
     return _voice;
 }
 
-void Voice::set_voice(std::string voice) {
+void Voice::set_voice(std::string voice)
+{
     this->_voice = voice;
 }
 

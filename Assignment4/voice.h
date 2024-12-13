@@ -2,7 +2,8 @@
 #define VOICE_H
 #include <string>
 
-class Voice {
+class Voice
+{
 public:
     Voice(std::string);
 

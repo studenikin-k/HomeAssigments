@@ -1,27 +1,33 @@
 #include <iostream>
 #include "gun_type.h"
 
-std::string Gun::get_gun_type() const {
+std::string Gun::get_gun_type() const
+{
     return _gun_type;
 }
 
-void Gun::set_gun_type(std::string gun_type) {
+void Gun::set_gun_type(std::string gun_type)
+{
     _gun_type = std::move(gun_type);
 }
 
-unsigned int Gun::get_ammo() const {
+unsigned int Gun::get_ammo() const
+{
     return _ammo;
 }
 
-void Gun::set_ammo(const unsigned int ammo) {
+void Gun::set_ammo(const unsigned int ammo)
+{
     _ammo = ammo;
 }
 
-unsigned int Gun::get_damage() const {
+unsigned int Gun::get_damage() const
+{
     return _damage;
 }
 
-void Gun::set_damage(const unsigned int damage) {
+void Gun::set_damage(const unsigned int damage)
+{
     _damage = damage;
 }
 
