@@ -40,6 +40,10 @@ bool Medic::attack() const {
     return true;
 }
 
+unsigned int Medic::get_medicines() const {
+    return _medicines;
+}
+
 void Medic::set_medicines(unsigned int medicines) {
     _medicines = medicines;
 }
