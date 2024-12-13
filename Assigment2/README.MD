@@ -10,4 +10,5 @@ Assignment2b: Read string like reverse polish notation, calculates the equation 
 ## Build
 make
 ## Run
-./main
+in assignment2a dir: ./assignment2a    
+in assignment2b dir: ./assignment2b
