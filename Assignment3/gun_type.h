@@ -9,11 +9,15 @@ public:
     ~Gun() = default;
 
     std::string get_gun_type() const;
+
     void set_gun_type(std::string gun_type);
+
     unsigned int get_ammo() const;
 
     void set_ammo(const unsigned int ammo);
+
     unsigned int get_damage() const;
+
     void set_damage(const unsigned int damage);
 
 protected:

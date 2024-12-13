@@ -38,3 +38,19 @@ bool Sniper::ultimate()
     std::cout << get_name() <<" take a breath and shoot headshot" << std::endl;
     return true;
 }
+
+unsigned int Sniper::get_mind_control() {
+    return _mind_control;
+}
+
+void Sniper::set_mind_control(unsigned int mind_control) {
+    this->_mind_control = mind_control;
+}
+
+unsigned int Sniper::get_points_to_ulta() {
+    return _points_to_ulta;
+}
+
+void Sniper::set_points_to_ulta(unsigned int points_to_ulta) {
+    this->_points_to_ulta = points_to_ulta;
+}

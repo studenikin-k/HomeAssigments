@@ -135,7 +135,7 @@ void Transformer::set_fraction(std::string fraction) {
     _fraction = std::move(fraction);
 }
 
-Voice* Transformer::get_voice() const {
+Voice *Transformer::get_voice() const {
     return _voice;
 }
 

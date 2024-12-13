@@ -42,7 +42,7 @@ public:
 
     void set_fraction(std::string fraction);
 
-    Voice* get_voice() const;
+    Voice *get_voice() const;
 
     void set_voice(const Voice &voice);
 

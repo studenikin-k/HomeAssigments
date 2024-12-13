@@ -37,7 +37,7 @@ void Bazookron::set_stablization(unsigned int stabilization) {
     this->_stabilization = stabilization;
 }
 
-unsigned int Bazookron::get_points_to_ulta() const{
+unsigned int Bazookron::get_points_to_ulta() const {
     return _points_to_ulta;
 }
 

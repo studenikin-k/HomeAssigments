@@ -29,3 +29,19 @@ bool Medic::ultimate()
     std::cout << get_name() << "returns to alive" << std::endl;
     return true;
 }
+
+unsigned int Medic::get_medicines() const {
+    return _medicines;
+}
+
+void Medic::set_medicines(unsigned int medicines) {
+    _medicines = medicines;
+}
+
+unsigned int Medic::get_points_to_ulta() const {
+    return _points_to_ulta;
+}
+
+void Medic::set_points_to_ulta(unsigned int points_to_ulta) {
+    _points_to_ulta = points_to_ulta;
+}
