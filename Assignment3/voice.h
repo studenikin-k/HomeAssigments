@@ -8,13 +8,9 @@ public:
 
     ~Voice() = default;
 
-    std::string get_voice() const {
-        return _voice;
-    }
+    std::string get_voice() const;
 
-    void set_voice(std::string voice) {
-        this->_voice = voice;
-    }
+    void set_voice(std::string voice);
 
     bool get_phrase() const;
 

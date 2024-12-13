@@ -28,3 +28,19 @@ bool Bazookron::ultimate() {
     std::cout << get_name() << "loads a 'baby' bomb into a bazooka" << std::endl;
     return true;
 }
+
+unsigned int Bazookron::get_stabilization() const {
+    return _stabilization;
+}
+
+void Bazookron::set_stablization(unsigned int stabilization) {
+    this->_stabilization = stabilization;
+}
+
+unsigned int Bazookron::get_points_to_ulta() const{
+    return _points_to_ulta;
+}
+
+void Bazookron::set_points_to_ulta(unsigned int points_to_ulta) {
+    this->_points_to_ulta = points_to_ulta;
+}

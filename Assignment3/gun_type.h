@@ -8,29 +8,13 @@ public:
 
     ~Gun() = default;
 
-    std::string get_gun_type() const {
-        return _gun_type;
-    }
+    std::string get_gun_type() const;
+    void set_gun_type(std::string gun_type);
+    unsigned int get_ammo() const;
 
-    void set_gun_type(std::string gun_type) {
-        _gun_type = std::move(gun_type);
-    }
-
-    unsigned int get_ammo() const {
-        return _ammo;
-    }
-
-    void set_ammo(const unsigned int ammo) {
-        _ammo = ammo;
-    }
-
-    unsigned int get_damage() const {
-        return _damage;
-    }
-
-    void set_damage(const unsigned int damage) {
-        _damage = damage;
-    }
+    void set_ammo(const unsigned int ammo);
+    unsigned int get_damage() const;
+    void set_damage(const unsigned int damage);
 
 protected:
     std::string _gun_type;

@@ -14,21 +14,13 @@ public:
 
     bool ultimate() override;
 
-    unsigned int &get_rage() {
-        return _rage;
-    }
+    unsigned int get_rage();
 
-    void set_rage(unsigned int rage) {
-        this->_rage = rage;
-    }
+    void set_rage(unsigned int rage);
 
-    unsigned int &get_points_to_ulta() {
-        return _points_to_ulta;
-    }
+    unsigned int get_points_to_ulta();
 
-    void set_points_to_ulta(unsigned int points_to_ulta) {
-        this->_points_to_ulta = points_to_ulta;
-    }
+    void set_points_to_ulta(unsigned int points_to_ulta);
 
 private:
     unsigned int _rage;
