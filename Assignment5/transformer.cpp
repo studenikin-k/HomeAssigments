@@ -43,6 +43,75 @@ Transformer::~Transformer() {
     std::cout << get_class_name() << " Method: " << __func__ << std::endl;
 }
 
+std::string Transformer::get_name() const {
+    return _name;
+}
+
+void Transformer::set_name(std::string name) {
+    _name = std::move(name);
+}
+
+unsigned int Transformer::get_health() const {
+    return _health;
+}
+
+void Transformer::set_health(unsigned int health) {
+    _health = health;
+}
+
+std::string Transformer::get_gun_type() const {
+    return _gun_type;
+}
+
+void Transformer::set_gun_type(std::string gun_type) {
+    _gun_type = std::move(gun_type);
+}
+
+unsigned int Transformer::get_damage() const {
+    return _damage;
+}
+
+void Transformer::set_damage(unsigned int damage) {
+    _damage = damage;
+}
+
+unsigned int Transformer::move_speed() const {
+    return _move_speed;
+}
+
+void Transformer::set_move_speed(unsigned int move_speed) {
+    _move_speed = move_speed;
+}
+
+unsigned int Transformer::get_ammo() const {
+    return _ammo;
+}
+
+void Transformer::set_ammo(unsigned int ammo) {
+    _ammo = ammo;
+}
+
+std::string Transformer::get_fraction() const {
+    return _fraction;
+}
+
+
+void Transformer::set_fraction(std::string fraction) {
+    _fraction = std::move(fraction);
+}
+
+Voice *Transformer::get_voice() const {
+    return _voice;
+}
+
+void Transformer::set_voice(const Voice &voice) {
+    if (_voice != nullptr) {
+        *_voice = voice;
+        return;
+    }
+    _voice = new Voice(voice);
+}
+
 
 bool Transformer::transform() const {
     std::cout << get_name() << " transforms" << std::endl;

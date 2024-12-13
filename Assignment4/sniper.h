@@ -23,7 +23,6 @@ public:
 
     unsigned int get_points_to_ulta();
 
-
     void set_points_to_ulta(unsigned int points_to_ulta);
 
 private:

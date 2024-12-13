@@ -256,5 +256,4 @@ TEST(Transformer, check_vector_of_pointers) {
         EXPECT_TRUE(pull->ultimate());
         EXPECT_EQ(pull->get_class_name(), pull->get_class_name());
     }
-
 }

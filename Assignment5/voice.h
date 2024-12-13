@@ -2,24 +2,19 @@
 #define VOICE_H
 #include <string>
 
-class Voice
-{
+class Voice {
 public:
     Voice(std::string);
 
-    ~Voice()=default;
+    ~Voice() = default;
 
-    std::string get_voice() const
-    {
-        return _voice;
-    }
 
-    void set_voice(std::string voice)
-    {
-        this->_voice = voice;
-    }
+    std::string get_voice() const;
+
+    void set_voice(std::string voice);
 
     bool get_phrase() const;
+
 
     std::string get_class_name() const;
 

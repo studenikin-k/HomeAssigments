@@ -18,21 +18,13 @@ public:
 
     bool ultimate() override;
 
-    unsigned int &get_mind_control() {
-        return _mind_control;
-    }
+    unsigned int get_mind_control();
 
-    void set_mind_control(unsigned int mind_control) {
-        this->_mind_control = mind_control;
-    }
+    void set_mind_control(unsigned int mind_control);
 
-    unsigned int &get_points_to_ulta() {
-        return _points_to_ulta;
-    }
+    unsigned int get_points_to_ulta();
 
-    void set_points_to_ulta(unsigned int points_to_ulta) {
-        this->_points_to_ulta = points_to_ulta;
-    }
+    void set_points_to_ulta(unsigned int points_to_ulta);
 
     std::string get_class_name() const {
         std::string name = "Class: Sniper\n";

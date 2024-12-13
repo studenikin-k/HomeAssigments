@@ -3,12 +3,12 @@
 #include "transformer.h"
 
 
-class Bazookron : public Transformer
-{
+class Bazookron : public Transformer {
 public:
-    Bazookron (const std::string &name, const std::string &fraction, const int &health, const std::string &gun_type,
-               const int &damage, const int &ammo, const int &move_speed);
-    ~Bazookron()=default;
+    Bazookron(const std::string &name, const std::string &fraction, const int &health, const std::string &gun_type,
+              const int &damage, const int &ammo, const int &move_speed);
+
+    ~Bazookron() = default;
 
 
     bool guide_gun();
@@ -17,37 +17,18 @@ public:
 
     bool ultimate() override;
 
-    unsigned int & get_stabilization()
-    {
-        return _stabilization;
-    }
+    unsigned int get_stabilization() const;
 
-    void set_stablization(unsigned int stabilization)
-    {
-        this->_stabilization = stabilization;
-    }
+    void set_stablization(unsigned int stabilization);
 
-    unsigned int & get_points_to_ulta()
-    {
-        return _points_to_ulta;
-    }
+    unsigned int get_points_to_ulta() const;
 
-    void set_points_to_ulta(unsigned int points_to_ulta)
-    {
-
-        this->_points_to_ulta = points_to_ulta;
-    }
-
-    std::string get_class_name() const {
-        std::string name = "Class: Bazookron\n";
-        return name;
-    }
+    void set_points_to_ulta(unsigned int points_to_ulta);
 
 private:
     unsigned int _stabilization;
     unsigned int _points_to_ulta;
 };
-
 
 
 #endif //BAZOOKRON_H

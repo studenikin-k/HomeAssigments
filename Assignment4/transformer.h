@@ -15,7 +15,8 @@ public:
 
     virtual ~Transformer();
 
-    std::string get_name() const;
+  std::string get_name() const;
+
 
     void set_name(std::string name);
 
@@ -40,7 +41,6 @@ public:
     void set_ammo(unsigned int ammo);
 
     std::string get_fraction() const;
-
 
     void set_fraction(std::string fraction);
 

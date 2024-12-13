@@ -9,7 +9,14 @@ Voice::Voice(std::string voice) {
     std::cout << "Voice are enabled." << std::endl;
 
     std::cout << get_class_name() << "Method: " << __func__ << std::endl;
+}
 
+std::string Voice::get_voice() const {
+    return _voice;
+}
+
+void Voice::set_voice(std::string voice) {
+    this->_voice = voice;
 }
 
 

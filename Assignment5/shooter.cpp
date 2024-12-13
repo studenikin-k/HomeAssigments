@@ -42,3 +42,19 @@ bool Shooter::attack() const {
 
     return true;
 }
+
+unsigned int Shooter::get_rage() {
+    return _rage;
+}
+
+void Shooter::set_rage(unsigned int rage) {
+    this->_rage = rage;
+}
+
+unsigned int Shooter::get_points_to_ulta() {
+    return _points_to_ulta;
+}
+
+void Shooter::set_points_to_ulta(unsigned int points_to_ulta) {
+    this->_points_to_ulta = points_to_ulta;
+}
