@@ -8,8 +8,7 @@
 #include "medic.h"
 #include <vector>
 
-TEST(Gun_type, check_gun_type_class)
-{
+TEST(Gun_type, check_gun_type_class) {
     Gun gun("AKM", 30, 30);
     EXPECT_EQ(gun.get_gun_type(), "AKM");
     EXPECT_EQ(gun.get_ammo(), 30);
@@ -22,8 +21,7 @@ TEST(Gun_type, check_gun_type_class)
     EXPECT_EQ(gun.get_ammo(), 45);
 }
 
-TEST(Transformer, check_transformer_parameters)
-{
+TEST(Transformer, check_transformer_parameters) {
     Gun gun("AKM", 30, 90);
 
     Transformer transformer("Transformer", "Divine", 200, gun.get_gun_type(), gun.get_damage(), gun.get_ammo(), 100);
@@ -57,8 +55,7 @@ TEST(Transformer, check_transformer_parameters)
     EXPECT_EQ(transformer.move_speed(), 130);
 }
 
-TEST(Transformer, check_transformer_methods)
-{
+TEST(Transformer, check_transformer_methods) {
     Gun gun("AKM", 30, 90);
 
     Transformer transformer("Transformer", "Divine", 200, gun.get_gun_type(), gun.get_damage(), gun.get_ammo(), 100);
@@ -71,20 +68,18 @@ TEST(Transformer, check_transformer_methods)
     EXPECT_TRUE(transformer.phrase());
 }
 
-TEST(Transformer, check_constructor_overloading)
-{
+TEST(Transformer, check_constructor_overloading) {
     Voice voice("English");
     Gun gun("AKM", 30, 90);
     Transformer transformer("Transformer", "Divine", 200, gun.get_gun_type(), gun.get_damage(), gun.get_ammo(), 100,
                             voice);
-    EXPECT_EQ(transformer.get_voice()->get_voice(), voice.get_voice());
+    EXPECT_EQ(transformer.get_voice()->get_voice(), "English");
     voice.set_voice("Russian");
     transformer.get_voice()->set_voice(voice.get_voice());
     EXPECT_EQ(transformer.get_voice()->get_voice(), voice.get_voice());
 }
 
-TEST(Transformer, check_operators)
-{
+TEST(Transformer, check_operators) {
     Gun gun("AKM", 30, 90);
     Gun awp("AWP", 70, 30);
     Transformer transformer("Transformer", "Divine", 200, gun.get_gun_type(), gun.get_damage(), gun.get_ammo(), 100);
@@ -115,8 +110,7 @@ TEST(Transformer, check_operators)
     EXPECT_FALSE(transformer != sniper);
 }
 
-TEST(Shooter, test_class_shooter)
-{
+TEST(Shooter, test_class_shooter) {
     AKM akm("AKM", 30, 90);
     Shooter shooter("Shooter", "Autobot", 100, akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 100);
 
@@ -133,8 +127,7 @@ TEST(Shooter, test_class_shooter)
     EXPECT_TRUE(shooter.ultimate());
 }
 
-TEST(Sniper, test_class_sniper)
-{
+TEST(Sniper, test_class_sniper) {
     AWP awp("AWP", 70, 30);
     Sniper sniper("Sniper", "Decepticon", 120, awp.get_gun_type(), awp.get_damage(), awp.get_ammo(), 70);
 
@@ -152,8 +145,7 @@ TEST(Sniper, test_class_sniper)
     EXPECT_TRUE(sniper.ultimate());
 }
 
-TEST(Bazookron, test_class_bazookron)
-{
+TEST(Bazookron, test_class_bazookron) {
     Bazooka bazooka("Bazooka", 100, 5);
     Bazookron bazookron("Bazookron", "Decepticon", 200, bazooka.get_gun_type(), bazooka.get_damage(),
                         bazooka.get_ammo(), 50);
@@ -171,8 +163,7 @@ TEST(Bazookron, test_class_bazookron)
     EXPECT_TRUE(bazookron.ultimate());
 }
 
-TEST(Medic, test_class_medic)
-{
+TEST(Medic, test_class_medic) {
     Arm arm("Arm", 60, 1 << 31);
     Medic medic("Doctor", "Autobot", 300, arm.get_gun_type(), arm.get_damage(), arm.get_ammo(), 200);
 
@@ -187,7 +178,7 @@ TEST(Medic, test_class_medic)
 }
 
 TEST(Transformer, test_parent_type_pointer) {
-    Transformer* transformer;
+    Transformer *transformer;
 
     AKM akm("AKM", 30, 90);
     Shooter shooter("Shooter", "Autobot", 100, akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 100);
@@ -196,7 +187,7 @@ TEST(Transformer, test_parent_type_pointer) {
 
     EXPECT_TRUE(transformer->ultimate());
     EXPECT_TRUE(transformer->attack());
-    EXPECT_EQ(transformer->get_class_name(),shooter.get_class_name());
+    EXPECT_EQ(transformer->get_class_name(), shooter.get_class_name());
 
     AWP awp("AWP", 70, 30);
     Sniper sniper("Sniper", "Decepticon", 120, awp.get_gun_type(), awp.get_damage(), awp.get_ammo(), 70);
@@ -205,7 +196,7 @@ TEST(Transformer, test_parent_type_pointer) {
 
     EXPECT_TRUE(transformer->ultimate());
     EXPECT_TRUE(transformer->attack());
-    EXPECT_EQ(transformer->get_class_name(),sniper.get_class_name());
+    EXPECT_EQ(transformer->get_class_name(), sniper.get_class_name());
 
     Arm arm("Arm", 60, 1 << 31);
     Medic medic("Doctor", "Autobot", 300, arm.get_gun_type(), arm.get_damage(), arm.get_ammo(), 200);
@@ -214,31 +205,56 @@ TEST(Transformer, test_parent_type_pointer) {
 
     EXPECT_TRUE(transformer->ultimate());
     EXPECT_TRUE(transformer->attack());
-    EXPECT_EQ(transformer->get_class_name(),medic.get_class_name());
+    EXPECT_EQ(transformer->get_class_name(), medic.get_class_name());
 
     Bazooka bazooka("Bazooka", 100, 5);
-    Bazookron bazookron("Bazookron","Decepticon",120,bazooka.get_gun_type(), bazooka.get_damage(),bazooka.get_ammo(),300);
+    Bazookron bazookron("Bazookron", "Decepticon", 120, bazooka.get_gun_type(), bazooka.get_damage(),
+                        bazooka.get_ammo(), 300);
 
     transformer = &bazookron;
 
     EXPECT_TRUE(transformer->ultimate());
     EXPECT_TRUE(transformer->attack());
-    EXPECT_EQ(transformer->get_class_name(),bazookron.get_class_name());
+    EXPECT_EQ(transformer->get_class_name(), bazookron.get_class_name());
 }
 
 TEST(Transformer, check_vector_of_pointers) {
-    std::vector<Transformer*>;
+    std::vector<Transformer *> pull;
     AKM akm("AKM", 30, 90);
     AWP awp("AWP", 70, 30);
     Bazooka bazooka("Bazooka", 100, 5);
     Arm arm("Arm", 60, 1 << 31);
 
 
-    Shooter Avtomat("Avtomat", "Autobot", 100, akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 100);
-    Shooter Pulemet("Pulemet", "Autobot", 100, akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 100);
-    Shooter Pistolet("Pistolet", "Autobot", 100, akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 100);
+    Shooter avtomat("Avtomat", "Autobot", 100, akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 110);
+    Shooter pulemet("Pulemet", "Decepticon", 120, akm.get_gun_type(), akm.get_damage(), akm.get_ammo(), 130);
 
+    Sniper sniper("Sniper", "Autobot", 120, awp.get_gun_type(), awp.get_damage(), awp.get_ammo(), 70);
+    Sniper city_sniper("Mark_Sniper", "Decepticon", 140, awp.get_gun_type(), awp.get_damage(), awp.get_ammo(), 80);
 
+    Bazookron bazookron("Bazookron", "Autobot", 150, bazooka.get_gun_type(), bazooka.get_damage(), bazooka.get_ammo(),
+                        150);
+    Bazookron bazookman("Bazookman", "Decepticon", 140, bazooka.get_gun_type(), bazooka.get_damage(),
+                        bazooka.get_ammo(), 160);
 
+    Medic doctor("Doctor", "Autobot", 200, arm.get_gun_type(), arm.get_damage(), arm.get_ammo(), 150);
+    Medic medic("Medic", "Decepticon", 250, arm.get_gun_type(), arm.get_damage(), arm.get_ammo(), 150);
+    Medic assistant("Assistant", "Divine", 300, arm.get_gun_type(), arm.get_damage() * 2, arm.get_ammo(), 300);
+
+    pull.push_back(&avtomat);
+    pull.push_back(&pulemet);
+    pull.push_back(&sniper);
+    pull.push_back(&city_sniper);
+    pull.push_back(&bazookron);
+    pull.push_back(&bazookman);
+    pull.push_back(&doctor);
+    pull.push_back(&medic);
+    pull.push_back(&assistant);
+
+    for (const auto &pull: pull) {
+        EXPECT_TRUE(pull->attack());
+        EXPECT_TRUE(pull->ultimate());
+        EXPECT_EQ(pull->get_class_name(), pull->get_class_name());
+    }
 
 }
