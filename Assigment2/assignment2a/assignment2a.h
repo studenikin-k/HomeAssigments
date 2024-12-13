@@ -2,7 +2,7 @@
 #define ASSGNMENTS_H
 
 
-void binaryReadWrite(std::string fileName);
+void binaryReadWrite(const std::string &fileName);
 
 
 
