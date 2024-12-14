@@ -3,7 +3,8 @@
 #include <vector>
 
 template<class T>
-class MyTemplateClass {
+class MyTemplateClass
+{
 public:
     MyTemplateClass(T obj, int num, const std::vector<float>& v);
     ~MyTemplateClass()=default;

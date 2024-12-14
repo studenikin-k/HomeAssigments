@@ -3,8 +3,12 @@
 
 #include <vector>
 
-class Positive_checker {
+class Positive_checker
+{
 public:
+    Positive_checker();
+    ~Positive_checker()=default;
+
     bool bar(int number, std::vector<float> &vec);
 
     int c_i_1();

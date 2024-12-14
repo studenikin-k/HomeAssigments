@@ -1,7 +1,7 @@
 CC=g++
 CFLAGS=-Werror -Wpedantic -Wall -std=c++17
 LDFLAGS=
-SOURCES=template_class.cpp positive_checker.cpp
+SOURCES=template_class.cpp positive_checker.cpp vector_non_empty_checker.cpp negative_size_checker.cpp
 HEADERS=template_class.h
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=template
