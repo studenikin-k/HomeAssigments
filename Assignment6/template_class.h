@@ -8,11 +8,12 @@ class Template_class
 {
 public:
     Template_class(const int number, const std::vector<float> &vector)
-    :_number(number), _vector(vector)
+        :_number(number), _vector(vector)
     {};
     ~Template_class()=default;
 
-    bool foo() {
+    bool foo()
+    {
         return _instance.bar(_number, _vector);
     }
 
@@ -24,12 +25,14 @@ private:
 };
 
 template<>
-class Template_class<int> {
+class Template_class<int>
+{
 public:
     Template_class(const int number, const std::vector<float>& vector)
         : _number(number), _vector(vector) {}
 
-    bool foo() {
+    bool foo()
+    {
         return true;
     }
 
@@ -40,12 +43,14 @@ private:
 
 
 template<>
-class Template_class<double> {
+class Template_class<double>
+{
 public:
     Template_class(const int number, const std::vector<float>& vector)
         : _number(number), _vector(vector) {}
 
-    bool foo() {
+    bool foo()
+    {
         return false;
     }
 

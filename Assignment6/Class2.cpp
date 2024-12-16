@@ -1,7 +1,8 @@
 #include "Class2.h"
 #include <iostream>
 
-bool Class2::bar(int, const std::vector<float>& vector) {
+bool Class2::bar(int, const std::vector<float>& vector)
+{
     return !vector.empty();
 }
 
