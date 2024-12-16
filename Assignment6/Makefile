@@ -1,8 +1,8 @@
 CC=g++
 CFLAGS=-Werror -Wpedantic -Wall -std=c++17
 LDFLAGS= -lgtest -lgtest_main -lpthread
-SOURCES=template_class.cpp positive_checker.cpp vector_non_empty_checker.cpp negative_size_checker.cpp tests.cpp
-HEADERS=template_class.h positive_checker.h vector_non_empty_checker.h negative_size_checker.h
+SOURCES=Class1.cpp Class2.cpp Class3.cpp tests.cpp
+HEADERS=Class1.h Class2.h Class3.h template_class.h
 OBJECTS=$(SOURCES:.cpp=.o)
 EXECUTABLE=tests
 

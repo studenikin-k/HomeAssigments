@@ -1,4 +1,4 @@
-#include "gtest/gtest.h"
+ #include "gtest/gtest.h"
 #include "transformer.h"
 #include "gun_type.h"
 #include "voice.h"
