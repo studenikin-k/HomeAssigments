@@ -1,5 +1,5 @@
 #include "negative_size_checker.h"
-
+#include <iostream>
 
 bool Negative_size_checker::bar(int number, std::vector<float> &vec)
 {
@@ -16,5 +16,5 @@ float Negative_size_checker::c_i_2()
 }
 void Negative_size_checker::c_i_3()
 {
-    std::cout << "NegativeSizeChecker c_i_3" << std::endl;
+    std::cout << "Negative_size_checker c_i_3" << std::endl;
 }

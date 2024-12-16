@@ -9,7 +9,7 @@ public:
     Positive_checker();
     ~Positive_checker()=default;
 
-    bool bar(int number, std::vector<float> &vec);
+    bool bar(int number, std::vector<float> &vector);
 
     int c_i_1();
 

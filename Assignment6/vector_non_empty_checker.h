@@ -9,7 +9,7 @@ public:
     Vector_non_empty_checker();
     ~Vector_non_empty_checker() = default;
 
-    bool bar(int number, std::vector<float>& vec);
+    bool bar(int number, std::vector<float>& vector);
     int c_i_1();
     float c_i_2();
     void c_i_3();

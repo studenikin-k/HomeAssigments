@@ -1,21 +1,29 @@
 #ifndef TEMPLATE_CLASS_H
 #define TEMPLATE_CLASS_H
 #include <vector>
+#include "positive_checker.h"
+#include "vector_non_empty_checker.h"
+#include "negative_size_checker.h"
 
 template<class T>
-class MyTemplateClass
+class Template_class
 {
 public:
-    MyTemplateClass(T obj, int num, const std::vector<float>& v);
-    ~MyTemplateClass()=default;
+    Template_class(T obj, int num, const std::vector<float>& v);
+    ~Template_class()=default;
 
     bool foo();
 private:
-    T _instance{}; // Экземпляр типа T
-    int _number; // Поле для числа
-    std::vector<float> _vector; // Поле для вектора
+    T _instance{};
+    int _number;
+    std::vector<float> _vector;
 
 };
+
+template class Template_class<positive_checker>;
+template class Template_class<vector_non_empty_checker>;
+template class Template_class<negative_size_checker>;
+
 
 
 #endif //TEMPLATE_CLASS_H
