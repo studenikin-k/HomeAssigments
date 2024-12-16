@@ -3,12 +3,13 @@
 
 #include <vector>
 
-class Class1
-{
+class Class1 {
 public:
-    Class1()=default;
-    Class1(const Class1& other) = default;
-    ~Class1()=default;
+    Class1() = default;
+
+    Class1(const Class1 &other) = default;
+
+    ~Class1() = default;
 
     static bool bar(int number, const std::vector<float> &vector);
 

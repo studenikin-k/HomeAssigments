@@ -4,16 +4,15 @@
 
 
 template<class T>
-class Template_class
-{
+class Template_class {
 public:
     Template_class(const int number, const std::vector<float> &vector)
-        :_number(number), _vector(vector)
-    {};
-    ~Template_class()=default;
+        : _number(number), _vector(vector) {
+    };
 
-    bool foo()
-    {
+    ~Template_class() = default;
+
+    bool foo() {
         return _instance.bar(_number, _vector);
     }
 
@@ -21,18 +20,16 @@ private:
     T _instance{};
     int _number;
     std::vector<float> _vector;
-
 };
 
 template<>
-class Template_class<int>
-{
+class Template_class<int> {
 public:
-    Template_class(const int number, const std::vector<float>& vector)
-        : _number(number), _vector(vector) {}
+    Template_class(const int number, const std::vector<float> &vector)
+        : _number(number), _vector(vector) {
+    }
 
-    bool foo()
-    {
+    bool foo() {
         return true;
     }
 
@@ -43,14 +40,13 @@ private:
 
 
 template<>
-class Template_class<double>
-{
+class Template_class<double> {
 public:
-    Template_class(const int number, const std::vector<float>& vector)
-        : _number(number), _vector(vector) {}
+    Template_class(const int number, const std::vector<float> &vector)
+        : _number(number), _vector(vector) {
+    }
 
-    bool foo()
-    {
+    bool foo() {
         return false;
     }
 
@@ -58,9 +54,6 @@ private:
     int _number;
     std::vector<float> _vector;
 };
-
-
-
 
 
 #endif //TEMPLATE_CLASS_H
